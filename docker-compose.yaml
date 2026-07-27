@@ -1,15 +1,19 @@
 services:
   pdns:
-    image: powerdns/pdns-auth-49
+    build: .
     container_name: pdns
     restart: unless-stopped
+
+    env_file:
+      - .env
+
     ports:
       - "53:53/tcp"
       - "53:53/udp"
-      - "8081:8081/tcp"
-    environment:
-      PDNS_AUTH_API_KEY: ${PDNS_API_KEY}
+      - "8081:8081"
+
     volumes:
-      - ./pdns.conf:/etc/powerdns/pdns.conf:ro
+      - ./pdns.conf.template:/etc/powerdns/pdns.conf.template:ro
       - ./bind.conf:/etc/powerdns/bind.conf:ro
       - ./zones:/zones:ro
+      

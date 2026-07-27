@@ -1,0 +1,13 @@
+services:
+  knot:
+    image: cznic/knot
+    container_name: knot
+    restart: unless-stopped
+
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+
+    volumes:
+      - ./knot.conf:/etc/knot/knot.conf:ro
+      - ./zones:/zones:ro

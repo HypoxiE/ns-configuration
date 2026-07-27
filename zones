@@ -1,0 +1,22 @@
+$ORIGIN krekstreamevents.ru.
+$TTL 3600
+
+@ IN SOA ns1.krekstreamevents.ru. admin.krekstreamevents.ru. (
+    2026072701 ;zone version YYYYMMDDNN
+    3600 ;secoundary dns validation delay
+    600 ;secoundary dns validation retry delay
+    1209600 ;secoundary dns info expired
+    300 ;negative ttl
+)
+
+@ IN NS ns1.krekstreamevents.ru.
+@ IN NS ns2.krekstreamevents.ru.
+
+ns1 IN A 178.208.65.47
+ns2 IN A 130.49.143.104
+
+@ IN A 178.208.65.47
+
+www IN CNAME @
+
+api IN A 178.208.65.47

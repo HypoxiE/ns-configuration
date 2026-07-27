@@ -1,1 +1,4 @@
 *~
+/rundir/
+/storage/keys/
+/storage/*.db

@@ -1,13 +1,12 @@
 services:
-  knot:
-    image: cznic/knot
-    container_name: knot
+  pdns:
+    image: powerdns/pdns-auth-49
+    container_name: pdns
     restart: unless-stopped
-
     ports:
       - "53:53/tcp"
       - "53:53/udp"
-
     volumes:
-      - ./knot.conf:/etc/knot/knot.conf:ro
+      - ./pdns.conf:/etc/powerdns/pdns.conf:ro
+      - ./bind.conf:/etc/powerdns/bind.conf:ro
       - ./zones:/zones:ro

@@ -2,3 +2,4 @@
 /rundir/
 /storage/keys/
 /storage/*.db
+.env

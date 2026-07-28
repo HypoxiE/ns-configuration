@@ -1,5 +1,6 @@
-launch=bind
-bind-config=/etc/powerdns/bind.conf
+launch=gsqlite3
+
+gsqlite3-database=/var/lib/powerdns/pdns.sqlite3
 
 api=yes
 api-key=${PDNS_API_KEY}
@@ -8,3 +9,7 @@ webserver=yes
 webserver-address=0.0.0.0
 webserver-port=8081
 webserver-allow-from=127.0.0.0/8,172.16.0.0/12
+
+local-address=0.0.0.0
+default-soa-content=ns1.krekstreamevents.ru hostmaster.krekstreamevents.ru
+loglevel=6

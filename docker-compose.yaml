@@ -14,5 +14,5 @@ services:
 
     volumes:
       - ./pdns.conf.template:/etc/powerdns/pdns.conf.template:ro
-      - ./data:/var/lib/powerdns
+      - ./pdns-data:/var/lib/powerdns
       

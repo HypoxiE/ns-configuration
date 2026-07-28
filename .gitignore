@@ -4,3 +4,4 @@
 /storage/*.db
 .env
 /pdns-data/
+/pda-data/

@@ -26,4 +26,19 @@ services:
     volumes:
       - ./pdns.conf.template:/etc/powerdns/pdns.conf.template:ro
       - ./pdns-data:/var/lib/powerdns
+
+  powerdns-admin:
+    image: ngoduykhanh/powerdns-admin:latest
+    container_name: powerdns-admin
+    restart: unless-stopped
+
+    env_file:
+      - .env
+    
+    volumes:
+      - ./pda-data:/data
+    ports:
+      - "9191:80"
+    depends_on:
+      - pdns
       

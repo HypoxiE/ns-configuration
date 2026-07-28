@@ -1,6 +1,10 @@
-launch=gsqlite3
+launch=gpgsql
 
-gsqlite3-database=/var/lib/powerdns/pdns.sqlite3
+gpgsql-host=postgres
+gpgsql-port=5432
+gpgsql-dbname=${POSTGRES_DB}
+gpgsql-user=${POSTGRES_USER}
+gpgsql-password=${POSTGRES_PASSWORD}
 
 api=yes
 api-key=${PDNS_API_KEY}
@@ -11,5 +15,5 @@ webserver-port=8081
 webserver-allow-from=127.0.0.0/8,172.16.0.0/12
 
 local-address=0.0.0.0
-default-soa-content=ns1.krekstreamevents.ru hostmaster.krekstreamevents.ru
+default-soa-content=ns1.krekstreamevents.ru hostmaster.krekstreamevents.r 1 10800 3600 604800 3600
 loglevel=6

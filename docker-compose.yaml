@@ -1,4 +1,15 @@
 services:
+  postgres:
+    image: postgres:18
+    container_name: pdns-postgres
+    restart: unless-stopped
+
+    env_file:
+      - .env
+
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+      
   pdns:
     build: .
     container_name: pdns

@@ -28,7 +28,7 @@ services:
       - ./pdns-data:/var/lib/powerdns
 
   dnscontrol:
-    build: ./dnscontrol
+    image: ghcr.io/stackexchange/dnscontrol:latest
     container_name: dnscontrol
     working_dir: /dns
     env_file:
@@ -36,3 +36,7 @@ services:
     volumes:
       - ./dnscontrol:/dns
       
+
+
+
+

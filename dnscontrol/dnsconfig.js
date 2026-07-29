@@ -1,8 +1,3 @@
-FROM ghcr.io/stackexchange/dnscontrol:latest
-
-COPY entrypoint.sh /entrypoint.sh
-
-ENTRYPOINT ["/entrypoint.sh"]hypoxie@p623433:/krek_projects/ns-configuration/dnscontrol$ cat dnsconfig.js
 var REG_NONE = NewRegistrar("none");
 
 var DSP = NewDnsProvider("pdns", {

@@ -5,3 +5,4 @@
 .env
 /pdns-data/
 /pda-data/
+/postgres/

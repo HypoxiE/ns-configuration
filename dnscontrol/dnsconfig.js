@@ -23,14 +23,16 @@ var SOA_DEFAULT = [
     )
 ];
 
-DEFAULT_TTL = TTL("10m");
-
 D("krekstreamevents.ru", REG_NONE, DnsProvider(DSP),
-    A("@", "178.208.65.47", TTL("5h")),
+  DefaultTTL("5h"),
 
-    A("rimafon", "178.208.65.47", TTL("30m")),
+  CNAME("www", "rimafon", TTL("30m")),
+  A("@", "178.208.65.47", TTL("30m")),
 
-    A("ns1", "178.208.65.47"),
+  A("rimafon", "178.208.65.47"),
+  A("admin-rimafon", "178.208.65.47"),
+  
+  A("ns1", "178.208.65.47"),
 );
 
 D_EXTEND("krekstreamevents.ru", SOA_DEFAULT);
